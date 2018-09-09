@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="onClick()">Display Details</button>
+      <p *ngIf="toggle; else toggling">This a text paragraph</p>
+      <ng-template #toggling>
+        <p>This is alternate Paragraph</p>
+      </ng-template>
+      <div *ngFor="let number of buttons; let i=index">
+        <p [ngStyle]="{backgroundColor: number >=5 ? 'blue' : 'transparent'}" [ngClass]="{back: number >=5}">{{i}} index number is {{number}}</p>
+      </div>
+    </div>
+  </div>
+</div>

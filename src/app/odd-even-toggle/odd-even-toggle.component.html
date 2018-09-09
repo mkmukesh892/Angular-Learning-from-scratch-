@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-success" (click)="oddOnly = !oddOnly">Display Only odd or Even numbers</button>
+      <div *ngIf="oddOnly">
+      <ul>
+        <li *ngFor="let odd of oddNumbs"
+        [ngClass]="{odd: odd % 2 !== 0}"
+        [ngStyle]="{backgroundColor: odd %2 !== 0 ? 'green' : 'yellow'}"><p>{{odd}}</p></li>
+      </ul>
+    </div>
+    <div *ngIf="!oddOnly">
+      <ul>
+        <li *ngFor="let even of evenNumbs"
+            [ngClass]="{odd: even % 2 !== 0}"
+            [ngStyle]="{backgroundColor: even %2 !== 0 ? 'green' : 'yellow'}"><p>{{even}}</p></li>
+      </ul>
+    </div>
+      <div *appUnless="oddOnly">
+        <ul>
+          <li *ngFor="let even of evenNumbs"
+              [ngClass]="{odd: even % 2 !== 0}"
+              [ngStyle]="{backgroundColor: even %2 !== 0 ? 'green' : 'yellow'}"><p>{{even}}</p></li>
+        </ul>
+      </div>
+      <div><p appBasicHighlight>This text is higlighted by basic highlight directive</p></div>
+      <div><p appBetterHighlight [defaultColor]="'yellow'" [highlightedColor]="'blue'">This text is higlighted by better highlight directive</p></div>
+      <div [ngSwitch]="value">
+        <p *ngSwitchCase="5">value is 5</p>
+        <p *ngSwitchCase="10">value is 10</p>
+        <p *ngSwitchCase="12">value is 12</p>
+        <p *ngSwitchDefault>value is 0</p>
+      </div>
+  </div>
+  </div>
+</div>

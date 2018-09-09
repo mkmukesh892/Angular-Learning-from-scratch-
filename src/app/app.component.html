@@ -1,0 +1,49 @@
+<div class="ccntainer-fluid">
+ <app-cockpit (serverCreated)="onServerAdded($event)"
+  (bluePrintCreated)="onBlueprintAdded($event)"
+  ></app-cockpit>
+  <div class="row">
+   <div class="col-xs-12">
+     <h1>I'm in the AppComponent!</h1>
+     <app-servers></app-servers>
+     <app-users></app-users>
+     <app-directives></app-directives>
+     <app-error-finding></app-error-finding>
+    <app-server-element *ngFor="let serverElement of serverElements"
+     [srvElement]="serverElement"></app-server-element>
+    <app-file-upload></app-file-upload>
+    <app-game-control (intervalFired)="onIntervalFired($event)">Loading</app-game-control>
+   </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd *ngFor="let odd of oddNumbers" [number]="odd"></app-odd>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-even *ngFor="let even of evenNumbers" [number]="even"></app-even>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-odd-even-toggle></app-odd-even-toggle>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+     <app-account-details></app-account-details>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-handle-users></app-handle-users>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-rxjs-example></app-rxjs-example>
+    </div>
+  </div>
+
